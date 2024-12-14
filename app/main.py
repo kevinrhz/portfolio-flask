@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from . import main
 from .forms import ContactForm
 
 main = Blueprint('main', __name__)

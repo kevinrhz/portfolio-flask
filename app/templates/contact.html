@@ -9,6 +9,10 @@
 
 {% block content %}
 <div class="contact-page">
+    <form method="POST">
+        {{ form.csrf_token }}  
+    </form>
+
     <h1>Contact Me</h1>
     <form method="POST">
         {{ form.csrf_token }}
