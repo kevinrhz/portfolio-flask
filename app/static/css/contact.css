@@ -7,6 +7,17 @@ h1 {
     margin-bottom: 20px; /* Create space between the title and the form */
 }
 
+.contact-page{
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto 1fr auto; /* Header, content, footer */
+    min-height: 100vh; /* page fills the screen height */
+    gap: 20px;
+}
+
+.contact-page > * {
+    justify-self: center;
+}
 
 
 /* Form Stuff */
@@ -15,8 +26,9 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    margin: 20px auto;
+    width: 90px;
+    max-width: 400px;
+    margin: 50px auto;
 }
 
 form label {

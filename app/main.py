@@ -17,6 +17,7 @@ def contact():
         return redirect(url_for('main.home'))
     return render_template('contact.html', form=form)
 
-@main.route('/portfolio')
-def portfolio():
-    return render_template('portfolio.html')
+
+@main.route('/projects')
+def projects():
+    return render_template('projects.html')

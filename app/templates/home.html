@@ -8,7 +8,21 @@
 {% endblock %}
 
 {% block content %}
-<h1>My Portfolio</h1>
-<p>This is the landing page.</p>
-<a href="{{ url_for('main.contact') }}">Contact Me</a>
+<div class="hero">
+    <div class="container">
+        <h1 class="name">Kevin Rahsaz</h1>
+        <h2 class="job title">Machine Learning & AI</h2>
+        <p class="bio">A passionate software engineer with a knack for crafting elegant solutions and a love for building beautiful, user-friendly applications. I thrive on challenges and enjoy exploring the ever-evolving landscape of technology.</p>
+
+        <div class="social-links">
+            <a href="https://github.com/kevinrhz" target="_blank"><i class="fab fa-github"></i>github</a>
+            <a href="https://instagram.com/kevmo.bc" target="_blank"><i class="fab fa-instagram"></i>instagram</a>
+            <a href="https://linkedin.com/in/kevin-rahsaz-832a7420a/" target="_blank"><i class="fab fa-linkedin"></i>linkedin</a>
+        </div>
+
+        <a href="{{ url_for('main.projects') }}" class="projects-button">My Projects</a>
+        <a href="{{ url_for('main.contact') }}" class="contact-button">Get in Touch</a>
+    </div>
+</div>
+
 {% endblock %}

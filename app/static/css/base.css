@@ -38,7 +38,8 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
     font-family: 'Kode Mono', monospace;
 }
 

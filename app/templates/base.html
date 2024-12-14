@@ -13,9 +13,9 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Kevin</a></li>
             <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
-            <li><a href="{{ url_for('main.portfolio') }}" class="{% if request.endpoint == 'main.portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li><a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a></li>
         </ul>
     </nav>
     
