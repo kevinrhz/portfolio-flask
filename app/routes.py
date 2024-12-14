@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from . import main
+from .forms import ContactForm
 
 main = Blueprint('main', __name__)
 
@@ -8,9 +10,13 @@ def home():
     return render_template('home.html')
 
 
-@main.route('/contact')
+@main.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        flash('Your message has been sent!')
+        return redirect(url_for('main.home'))
+    return render_template('contact.html', form=form)
 
 @main.route('/portfolio')
 def portfolio():
