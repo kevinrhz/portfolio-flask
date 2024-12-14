@@ -11,3 +11,7 @@ def home():
 @main.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@main.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')

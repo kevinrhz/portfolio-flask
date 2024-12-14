@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Portfolio{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block extra_css %}
+    <!-- stylesheets -->
+    {% endblock %}
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="{{ url_for('main.home') }}">Home</a></li>
-            <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
+            <li><a href="{{ url_for('main.portfolio') }}" class="{% if request.endpoint == 'main.portfolio' %}active{% endif %}">Portfolio</a></li>
         </ul>
     </nav>
+    
 
     <!-- Page Content -->
     <div id="content">

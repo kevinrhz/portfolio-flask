@@ -1,0 +1,60 @@
+header {
+    background: linear-gradient(90deg, #007BFF, #0056B3); /* Tech-themed blue gradient */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Kode Mono', monospace;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for text readability */
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #FFFAF0, #D3D3D3);
+    background-attachment: fixed;
+    color: #333;
+}
+
+footer {
+    background: linear-gradient(90deg, #333333, #555555); /* Dark gradient for footer */
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    font-family: 'Kode Mono', monospace;
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Kode Mono', monospace;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a.active {
+    color: #FFD700; /* Gold color for the active link */
+    font-weight: bold;
+    border-bottom: 2px solid #FFD700; /* Optional underline */
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Gold accent */
+}

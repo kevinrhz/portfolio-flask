@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}portfolio{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="project">
+    <h2>PC Project</h2>
+    <p>A detailed write-up about the gaming PC I built. It was a challenging but rewarding experience that involved component research, assembly, and optimization.</p>
+    <a href="{{ url_for('main.home') }}">View More</a>
+</div>
+
+<div class="project">
+    <h2>Machine Learning Model</h2>
+    <p>Implemented a machine learning model stronger than Jarvis and Ultron combined. Destined to take over the star system.</p>
+    <a href="https://github.com/example" target="_blank">View on GitHub</a>
+</div>
+
+<div class="project">
+    <h2>Portfolio Website</h2>
+    <p>This site itself! A demonstration of my skills in Flask, HTML, CSS, and responsive web design.</p>
+    <a href="{{ url_for('main.contact') }}">Contact Me</a>
+</div>
+</div>
+{% endblock %}

@@ -2,6 +2,11 @@
 
 {% block title %}KevPapi{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <h1>Welcome to My Portfolio</h1>
 <p>This is the landing page.</p>
