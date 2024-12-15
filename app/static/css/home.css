@@ -26,6 +26,10 @@ a:hover {
 
 
 
+
+
+/* Classes */
+
 .hero {
     display: grid;
     justify-content: center;
@@ -117,4 +121,51 @@ a:hover {
 
 .contact-button:hover {
     color: #FFD700;
+}
+
+.plaque {
+    background-color: rgba(255, 128, 0, 0.927);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+
+
+/* Animations */
+
+.hero, .name, .job, .title, .bio, .social-links, .projects-button, .contact-button {
+    opacity: 0; /* Initially hide the elements */
+    animation: fadeIn 1s ease forwards; /* Apply the fadeIn animation */
+}
+
+.name {
+    animation-delay: 0.5s;
+}
+
+.job, .title {
+    animation-delay: 0.8s;
+}
+
+.bio {
+    animation-delay: 1.1s;
+}
+
+.social-links {
+    animation-delay: 1.4s;
+}
+
+.projects-button {
+    animation-delay: 1.7s;
+}
+
+.contact-button {
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade in by increasing opacity to 1 */
+    }
 }

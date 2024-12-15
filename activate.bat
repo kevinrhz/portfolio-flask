@@ -1,1 +1,1 @@
-venv\Scripts\activate
+venv_win\Scripts\activate

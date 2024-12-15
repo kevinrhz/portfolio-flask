@@ -6,29 +6,23 @@
     <title>{% block title %}Portfolio{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% block extra_css %}
-    <!-- stylesheets -->
     {% endblock %}
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+    <nav class="navbar"> <div class="container">
         <ul>
             <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Kevin</a></li>
             <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
             <li><a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a></li>
             <li><a href="{{ url_for('main.skills') }}" class="{% if request.endpoint == 'main.skills' %}active{% endif %}">Skills</a></li>
         </ul>
-    </nav>
+    </div></nav>
     
-
-    <!-- Page Content -->
     <div id="content">
         {% block content %}
-        <!-- Child templates will insert their content here -->
         {% endblock %}
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Kevin Rahsaz. All rights reserved.</p>
     </footer>
