@@ -21,3 +21,7 @@ def contact():
 @main.route('/projects')
 def projects():
     return render_template('projects.html')
+
+@main.route('/skills')
+def skills():
+    return render_template('skills.html')
