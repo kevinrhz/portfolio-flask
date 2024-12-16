@@ -124,13 +124,53 @@ a:hover {
 }
 
 .plaque {
-    background-color: rgba(255, 128, 0, 0.927);
+    background-color: rgba(255, 128, 0, 0.01);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
 
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(10%, -90%);
+    z-index: -1; /* Place the image behind the plaque */
+    opacity: 1;
+    width: 300px;
+}
+
+.planet-cluster {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place the image behind the plaque */
+    opacity: 0;
+    width: 300px;
+    transition: opacity 1s ease; /* Add a smooth transition for opacity */
+}
+
+.hero:hover .planet-cluster {
+    opacity: 0.5; /* Show the image on hover */
+}
+
+.planet-cluster {
+    /* ... other styles ... */
+    animation: fadeInScale 2s ease forwards; /* Apply animation */
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
 
 
 /* Animations */
