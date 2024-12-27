@@ -1,29 +1,63 @@
 {% extends 'base.html' %}
 
-{% block title %}portfolio{% endblock %}
+{% block title %}Projects{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
-<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script>
 {% endblock %}
 
 {% block content %}
-<div class="project">
-    <h2>PC Project</h2>
-    <p>A detailed write-up about the gaming PC I built. It was a challenging but rewarding experience that involved component research, assembly, and optimization.</p>
-    <a href="{{ url_for('main.home') }}">View More</a>
-</div>
+<main class="projects-page">
+    <!-- Section 1: Horizontal Swiping Cards -->
+    <section class="projects-slider">
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="project-card" style="background-image: url('{{ url_for('static', filename='images/190eDTM.jpeg') }}');">
+                    <div class="project-info">
+                        <h2>Mercedes 190E DTM</h2>
+                        <p>A legendary DTM racing machine with aggressive styling and engineering excellence.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="project-card" style="background-image: url('{{ url_for('static', filename='images/close up.jpeg') }}');">
+                    <div class="project-info">
+                        <h2>Custom PC Build</h2>
+                        <p>An advanced liquid-cooled custom-built PC for peak gaming and productivity.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card" style="background-image: url('{{ url_for('static', filename='images/porsche935.jpg.webp') }}');">
+                    <div class="project-info">
+                        <h2>Porsche 935</h2>
+                        <p>A masterpiece of engineering, built for track domination with carbon-fiber precision.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
+    </section>
 
-<div class="project">
-    <h2>Machine Learning Model</h2>
-    <p>Implemented a machine learning model stronger than Jarvis and Ultron combined. Destined to take over the star system.</p>
-    <a href="https://github.com/example" target="_blank">View on GitHub</a>
-</div>
-
-<div class="project">
-    <h2>Portfolio Website</h2>
-    <p>This site itself! A demonstration of my skills in Flask, HTML, CSS, and responsive web design.</p>
-    <a href="{{ url_for('main.contact') }}">Contact Me</a>
-</div>
-</div>
+    <!-- Section 2: Skills Grid -->
+    <section class="skills-grid">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="skill-card" data-level="Advanced">Python</div>
+            <div class="skill-card" data-level="Intermediate">Flask</div>
+            <div class="skill-card" data-level="Advanced">SQL</div>
+            <div class="skill-card" data-level="Beginner">Machine Learning</div>
+            <div class="skill-card" data-level="Advanced">CSS</div>
+            <div class="skill-card" data-level="Advanced">HTML</div>
+            <div class="skill-card" data-level="Beginner">JavaScript</div>
+        </div>
+    </section>
+    
+</main>
 {% endblock %}

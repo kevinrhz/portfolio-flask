@@ -9,16 +9,25 @@
     {% endblock %}
 </head>
 <body>
-    <nav class="navbar"> <div class="container">
-        <ul>
-            <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Kevin</a></li>
-            <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
-            <li><a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a></li>
-            <li><a href="{{ url_for('main.skills') }}" class="{% if request.endpoint == 'main.skills' %}active{% endif %}">Skills</a></li>
-        </ul>
-    </div></nav>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('main.home') }}" class="logo">Kevin</a>
+            <ul>
+                <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a></li>
+                <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </nav>
+
+    <canvas id="star-canvas"></canvas> <!-- Starry Background -->
     
-    <div id="content">
+    <div id="content"> <!-- Page Content -->
         {% block content %}
         {% endblock %}
     </div>
@@ -26,5 +35,16 @@
     <footer>
         <p>&copy; 2024 Kevin Rahsaz. All rights reserved.</p>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/stars.js') }}"></script> <!-- Starry Background Script -->
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.navbar ul');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

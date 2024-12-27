@@ -1,7 +1,7 @@
 h1 {
     font-family: 'Kode Mono', monospace;
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 4rem;
+    color: var(--text-color);
     text-align: center;
     margin-top: 20px; /* Add spacing from the top of the page */
     margin-bottom: 20px; /* Create space between the title and the form */
@@ -24,50 +24,97 @@ h1 {
 }
 
 
-/* Form Stuff */
+/* Contact Form Styling - Plaque Design */
 form {
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px;
+    max-width: 500px;
     width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-form p {
+/* Form Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    margin-top: 20px;
+}
+
+/* Form Title Styling */
+.contact-page h1 {
+    font-family: 'Kode Mono', monospace;
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 10px;
     margin-bottom: 15px;
 }
 
-form label {
-    font-family: 'Kode Mono', monospace;
-    font-size: 1rem;
-    margin-top: 10px;
-    display: block;
-}
-
+/* Form Input Fields */
 .form-control {
     width: 100%;
-    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--neutral-light);
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    color: var(--text-color);
+}
+
+.form-control#message {
+    width: 100%;
+    height: 200px; /* Longer height */
+    resize: none; /* Fixed size, non-resizable */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--neutral-light);
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    color: var(--text-color);
     padding: 10px;
     font-family: 'Kode Mono', monospace;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
+/* Send Button */
 .form-button {
-    margin-top: 20px;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    font-weight: bold;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-color);
+    padding: 18px 40px; /* Slightly larger button */
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 10px;
     font-family: 'Kode Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.8s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle initial shadow */
 }
 
+/* Gradient Animation on Hover */
 .form-button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    transform: translateY(-3px) scale(1.05); /* Subtle lift and scale */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow */
 }
 
 
