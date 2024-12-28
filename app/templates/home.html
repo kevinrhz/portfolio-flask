@@ -18,11 +18,12 @@
             <h1 class="name">Kevin Rahsaz</h1>
             <h2 class="job title">Machine Learning & AI</h2>
 
-            <a href="{{ url_for('main.projects') }}" class="projects-button">My Projects</a>
-            <a href="{{ url_for('main.contact') }}" class="contact-button">Get in Touch</a>
+            <div class="button-group">
+                <a href="{{ url_for('main.projects') }}" class="projects-button">My Projects</a>
+                <a href="{{ url_for('main.contact') }}" class="contact-button">Get in Touch</a>
+            </div>
         </div>
 
-        <!-- Social Media Icons Section -->
         <div class="social-icons">
             <a href="https://github.com/kevinrhz" target="_blank">
                 <img src="{{ url_for('static', filename='icons/github-icon.svg') }}" alt="GitHub Icon">
@@ -36,4 +37,74 @@
         </div>
     </div>
 </div>
+
+<!-- About Me Button -->
+<div class="about-me-button" id="about-me-btn">
+    <span>About Me</span>
+    <img src="{{ url_for('static', filename='icons/double-arrow-down.svg') }}" alt="Double Arrow Icon">
+</div>
+
+<!-- About Me Section -->
+<section id="about-me-section" class="about-me-section">
+    <h2>About Me</h2>
+    <div class="about-me-container">
+        <!-- Part 1: Professional Summary -->
+        <div class="about-me-summary">
+            <p>
+                I am a passionate <strong>Machine Learning & AI Developer</strong> with a background in building efficient, scalable applications. With experience in both backend systems and data-driven projects, I excel at solving complex challenges with elegant technical solutions.
+            </p>
+        </div>
+
+        <!-- Part 2: Key Achievements -->
+        <div class="about-me-achievements">
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Developed an AI model that improved prediction accuracy by 25%.</li>
+                <li>Led a team to deliver a critical backend system 2 weeks ahead of schedule.</li>
+                <li>Certified in Advanced Machine Learning by XYZ Institution.</li>
+            </ul>
+        </div>
+
+        <!-- Part 3: Skills Highlight -->
+        <div class="about-me-skills">
+            <h3>Core Skills</h3>
+            <div class="skills-grid">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Machine Learning</span>
+                <span>SQL</span>
+                <span>Data Visualization</span>
+            </div>
+        </div>
+
+        <!-- Part 4: Call to Action -->
+        <div class="about-me-cta">
+            <a href="/static/resume.pdf" target="_blank" class="cta-button">Download My Resume</a>
+        </div>
+    </div>
+</section>
+
+
 {% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const aboutMeButton = document.getElementById('about-me-btn');
+        const aboutMeSection = document.getElementById('about-me-section');
+
+        aboutMeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (aboutMeSection) {
+                aboutMeSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+
+

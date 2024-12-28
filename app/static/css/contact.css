@@ -1,124 +1,104 @@
-h1 {
-    font-family: 'Kode Mono', monospace;
-    font-size: 4rem;
+/* General Layout */
+body {
+    background-color: var(--bg-color);
     color: var(--text-color);
-    text-align: center;
-    margin-top: 20px; /* Add spacing from the top of the page */
-    margin-bottom: 20px; /* Create space between the title and the form */
+    font-family: 'Kode Mono', monospace;
+    margin: 0;
 }
 
-.contact-page{
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    grid-template-rows: auto 1fr auto; /* Header, content, footer */
-    min-height: 100vh; /* page fills the screen height */
-    gap: 20px;
-}
-
+/* Contact Page Layout */
 .contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
-    margin-top: 50px;
+    gap: 20px;
+    padding: 20px;
 }
 
+/* Contact Page Title */
+.contact-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
 
-/* Contact Form Styling - Plaque Design */
+/* Contact Page Description */
+.contact-page p {
+    font-size: 1.2rem;
+    color: var(--neutral-light);
+    margin-bottom: 20px;
+}
+
+/* Email Link */
+.contact-page p a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.contact-page p a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Form Styling */
 form {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    background-color: hsla(0, 0%, 100%, 0.1); /* Semi-transparent white */
     backdrop-filter: blur(10px); /* Frosted glass effect */
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+    padding: 30px;
     max-width: 500px;
     width: 100%;
     text-align: center;
-    margin: 0 auto;
-    z-index: 1;
-    position: relative;
     animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Form Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.contact-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    margin-top: 20px;
-}
-
-/* Form Title Styling */
-.contact-page h1 {
-    font-family: 'Kode Mono', monospace;
-    font-size: 3rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
-/* Form Input Fields */
+/* Input Fields */
 .form-control {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid var(--neutral-light);
-    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    border: 1px solid hsla(0, 0%, 80%, 0.5);
+    background: hsla(0, 0%, 100%, 0.05); /* Transparent input */
     color: var(--text-color);
+    font-family: 'Kode Mono', monospace;
 }
 
+/* Textarea Field */
 .form-control#message {
-    width: 100%;
-    height: 200px; /* Longer height */
-    resize: none; /* Fixed size, non-resizable */
+    height: 200px;
+    resize: none;
     margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid var(--neutral-light);
-    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
-    color: var(--text-color);
     padding: 10px;
-    font-family: 'Kode Mono', monospace;
 }
 
-/* Send Button */
+/* Submit Button */
 .form-button {
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(90deg, hsl(20, 100%, 50%), hsl(0, 100%, 50%));
     color: var(--text-color);
-    padding: 18px 40px; /* Slightly larger button */
+    padding: 15px 30px;
     border: none;
-    border-radius: 10px;
-    font-family: 'Kode Mono', monospace;
+    border-radius: 8px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background 0.8s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle initial shadow */
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Gradient Animation on Hover */
 .form-button:hover {
-    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
-    transform: translateY(-3px) scale(1.05); /* Subtle lift and scale */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow */
+    background: linear-gradient(135deg, hsl(0, 100%, 50%), hsl(20, 100%, 50%));
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px hsla(0, 0%, 0%, 0.3);
 }
 
-
-/* Flash Message Stuff */
+/* Flash Messages */
 .flash-messages {
     margin: 20px auto;
     max-width: 400px;
@@ -133,13 +113,75 @@ form {
 }
 
 .alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: hsl(120, 40%, 90%);
+    color: hsl(120, 40%, 20%);
+    border: 1px solid hsl(120, 40%, 70%);
 }
 
 .alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: hsl(0, 40%, 90%);
+    color: hsl(0, 40%, 30%);
+    border: 1px solid hsl(0, 40%, 70%);
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .contact-page h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-page p {
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .form-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Smaller Devices */
+@media (max-width: 480px) {
+    .contact-page h1 {
+        font-size: 2rem;
+    }
+
+    .contact-page p {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .form-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    form {
+        padding: 15px;
+    }
 }

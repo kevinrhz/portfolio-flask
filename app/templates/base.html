@@ -11,12 +11,25 @@
 <body class="{% if request.endpoint == 'main.home' %}home{% endif %}">
     <nav class="navbar">
         <div class="container">
-            <a href="{{ url_for('main.home') }}" class="logo">Kevin</a>
             <ul>
                 <li><a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Home</a></li>
                 <li><a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a></li>
                 <li><a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a></li>
             </ul>
+    
+            <!-- Social Media Links Section -->
+            <div class="navbar-social">
+                <a href="https://github.com/kevinrhz" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/github-icon.svg') }}" alt="GitHub Icon">
+                </a>
+                <a href="https://instagram.com/kevmo.bc" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/instagram-icon.svg') }}" alt="Instagram Icon">
+                </a>
+                <a href="https://linkedin.com/in/kevin-rahsaz-832a7420a/" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/linkedin-icon.svg') }}" alt="LinkedIn Icon">
+                </a>
+            </div>
+    
             <div class="menu-toggle" id="mobile-menu">
                 <div></div>
                 <div></div>
@@ -24,6 +37,7 @@
             </div>
         </div>
     </nav>
+    
 
     <canvas id="star-canvas"></canvas> <!-- Starry Background -->
     

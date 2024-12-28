@@ -124,6 +124,35 @@ a:hover {
     border-bottom: 2px solid var(--accent-secondary);
 }
 
+/* Social Media Icons in Navbar */
+.navbar-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: hsla(0, 0%, 100%, 0.1); /* Subtle background */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.navbar-social a img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+}
+
+.navbar-social a:hover {
+    transform: scale(1.1);
+    background: var(--accent-primary);
+}
+
 /* Navbar Logo */
 .navbar .logo {
     font-size: 1.5rem;
@@ -186,6 +215,10 @@ body.home .navbar.visible {
 
     .navbar .menu-toggle {
         display: flex;
+    }
+
+    .navbar-social {
+        display: none; /* Hide social links on smaller screens */
     }
 }
 
