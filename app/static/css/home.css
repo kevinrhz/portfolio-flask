@@ -35,15 +35,13 @@ a:hover {
 
 /* Classes */
 .hero {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: none; /* Remove overriding background */
     text-align: center;
-    place-items: center;
-    position: relative; /* Ensure it's above the canvas */
-    z-index: 1; /* Ensure content is above the stars */
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -65,13 +63,6 @@ a:hover {
     font-weight: 300;
 }
 
-/* Ensure text inside plaque is white */
-.plaque .name,
-.plaque .job,
-.plaque .title,
-.plaque .bio {
-    color: var(--text-color);
-}
 
 
 /* Buttons */
@@ -92,43 +83,72 @@ a:hover {
     background-color: var(--accent-secondary);
 }
 
-
-
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.projects {
-    background-color: #007bff;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.social-links a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 1.5em;
-    color: #333;
-    transition: color 0.2s;
-}
-
 /* Decorative Elements */
 .plaque {
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Name and Job Title Styling */
+.plaque .name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.plaque .job {
+    font-size: 1.5rem;
+    color: var(--neutral-light);
+    margin-bottom: 30px;
+}
+
+/* Button Highlighting */
+.projects-button,
+.contact-button {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Kode Mono', monospace;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-button:hover,
+.contact-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+}
+
+/* Ensure buttons stay visually appealing on smaller screens */
+@media (max-width: 768px) {
+    .plaque .name {
+        font-size: 2.5rem;
+    }
+
+    .plaque .job {
+        font-size: 1.2rem;
+    }
+
+    .projects-button,
+    .contact-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
 }
 
 .background-image {
@@ -140,6 +160,16 @@ a:hover {
     opacity: 0.8;
     width: 300px;
 }
+
+/* Ensure text inside plaque is white */
+.plaque .name,
+.plaque .job,
+.plaque .title,
+.plaque .bio {
+    color: var(--text-color);
+}
+
+
 
 /* Saturn Image Styling */
 .saturn {
@@ -178,7 +208,58 @@ a:hover {
 }
 
 
-/* Animations */
+/* Social Icons Styling */
+.social-icons {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+.social-icons a {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        right: 2%;
+        top: auto;
+        bottom: 5%;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .social-icons a img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+/* Intro Animations */
 
 .hero, .name, .job, .title, .bio, .social-links, .projects-button, .contact-button {
     opacity: 0; /* Initially hide the elements */

@@ -39,23 +39,40 @@
                 </div>
             </div>
         </div>
-        <div class="slider-controls">
-            <button class="prev-btn">❮</button>
-            <button class="next-btn">❯</button>
-        </div>
     </section>
 
     <!-- Section 2: Skills Grid -->
     <section class="skills-grid">
         <h2>Skills & Technologies</h2>
         <div class="skills-container">
-            <div class="skill-card" data-level="Advanced">Python</div>
-            <div class="skill-card" data-level="Intermediate">Flask</div>
-            <div class="skill-card" data-level="Advanced">SQL</div>
-            <div class="skill-card" data-level="Beginner">Machine Learning</div>
-            <div class="skill-card" data-level="Advanced">CSS</div>
-            <div class="skill-card" data-level="Advanced">HTML</div>
-            <div class="skill-card" data-level="Beginner">JavaScript</div>
+            <div class="skill-card" data-level="Expert">
+                <img src="{{ url_for('static', filename='icons/python-black.svg') }}" alt="Python Icon" class="skill-icon">
+                <span class="skill-text">Python</span>
+            </div>
+            <div class="skill-card" data-level="Intermediate">
+                <img src="{{ url_for('static', filename='icons/flask-icon.svg') }}" alt="Flask Icon" class="skill-icon">
+                <span class="skill-text">Flask</span>
+            </div>
+            <div class="skill-card" data-level="Advanced">
+                <img src="{{ url_for('static', filename='icons/sql-icon.svg') }}" alt="SQL Icon" class="skill-icon">
+                <span class="skill-text">SQL</span>
+            </div>
+            <div class="skill-card" data-level="Beginner">
+                <img src="{{ url_for('static', filename='icons/ml-icon.svg') }}" alt="ML Icon" class="skill-icon">
+                <span class="skill-text">Machine Learning</span>
+            </div>
+            <div class="skill-card" data-level="Advanced">
+                <img src="{{ url_for('static', filename='icons/css-icon.svg') }}" alt="CSS Icon" class="skill-icon">
+                <span class="skill-text">CSS</span>
+            </div>
+            <div class="skill-card" data-level="Advanced">
+                <img src="{{ url_for('static', filename='icons/html-icon.svg') }}" alt="HTML Icon" class="skill-icon">
+                <span class="skill-text">HTML</span>
+            </div>
+            <div class="skill-card" data-level="Beginner">
+                <img src="{{ url_for('static', filename='icons/js-icon.svg') }}" alt="JS Icon" class="skill-icon">
+                <span class="skill-text">JavaScript</span>
+            </div>
         </div>
     </section>
     

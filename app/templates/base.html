@@ -8,7 +8,7 @@
     {% block extra_css %}
     {% endblock %}
 </head>
-<body>
+<body class="{% if request.endpoint == 'main.home' %}home{% endif %}">
     <nav class="navbar">
         <div class="container">
             <a href="{{ url_for('main.home') }}" class="logo">Kevin</a>
@@ -41,10 +41,26 @@
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.navbar ul');
-
+    
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+    
+        // Navbar Visibility on Mouse Hover (Homepage Only)
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.body.classList.contains('home')) {
+                const navbar = document.querySelector('.navbar');
+    
+                document.addEventListener('mousemove', (event) => {
+                    if (event.clientY <= 50) { 
+                        navbar.classList.add('visible'); // Show navbar if mouse is near top
+                    } else {
+                        navbar.classList.remove('visible'); // Hide navbar otherwise
+                    }
+                });
+            }
+        });
     </script>
+    
 </body>
 </html>

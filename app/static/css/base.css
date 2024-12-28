@@ -147,6 +147,23 @@ a:hover {
     border-radius: 2px;
 }
 
+/* Navbar Behavior on Homepage */
+body.home .navbar {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: none; /* Prevent accidental interaction */
+}
+
+body.home .navbar.visible {
+    transform: translateY(0);
+    pointer-events: all; /* Allow interaction when visible */
+}
+
 /* Mobile Navbar Styles */
 @media (max-width: 768px) {
     .navbar ul {
