@@ -2,7 +2,8 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from flask_mail import Message
 from smtplib import SMTPException
 from .forms import ContactForm
-from . import mail
+from . import mail, db
+from .models import ContactMessage, Project
 import os
 
 main = Blueprint('main', __name__)
@@ -52,6 +53,7 @@ def contact():
 
 @main.route('/projects')
 def projects():
+    all_projects = Project.query.all()
     return render_template('projects.html')
 
 
