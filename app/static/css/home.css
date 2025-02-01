@@ -20,10 +20,10 @@ body {
 
 /* Plaque Styling */
 .plaque {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     text-align: center;
     max-width: 600px;
@@ -31,14 +31,18 @@ body {
 }
 
 .plaque .name {
+    color: #FFFFFF
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 10px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .plaque .job {
+    color: #FFFFFF
     font-size: 1.5rem;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Button Group */
@@ -78,6 +82,7 @@ body {
     flex-direction: column;
     gap: 15px;
     z-index: 10;
+    
 }
 
 .social-icons a {
