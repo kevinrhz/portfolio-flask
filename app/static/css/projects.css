@@ -1,76 +1,96 @@
-/* General Layout */
+/* General Page Layout */
 .projects-page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-/* SECTION 1: Horizontal Slider */
-.projects-slider {
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.slider-container {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 0 5vw;
-    gap: 20px;
-    cursor: pointer;
-}
-
-.slider-track {
-    display: flex;
-    gap: 20px;
     align-items: center;
-    padding: 10px 0;
+    padding: 50px 20px;
+    color: var(--text-color);
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Individual Project Card */
-.project-card {
-    flex: 0 0 90vw;
-    height: 60vh;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    scroll-snap-align: center;
-    position: relative;
-    overflow: hidden;
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--neutral-light);
+    text-align: center;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
     padding: 20px;
-    box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.3);
-    transition: transform 0.3s ease;
+}
+
+.project-card {
+    background: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px hsla(0, 0%, 0%, 0.3);
 }
 
-.project-info {
-    z-index: 2;
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-details {
+    padding: 20px;
     text-align: center;
-    background: hsla(0, 0%, 0%, 0.5);
-    padding: 10px 15px;
+}
+
+.project-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--accent-primary);
+}
+
+.project-details p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--neutral-light);
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.tech-stack li {
+    background: var(--neutral-light);
+    color: var(--bg-color);
+    padding: 5px 10px;
     border-radius: 5px;
+    font-size: 0.9rem;
+    list-style: none;
 }
 
-.project-info h2 {
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.project-info p {
-    font-size: 1em;
-    margin-bottom: 1em;
-}
-
-.project-info .btn {
-    background: linear-gradient(90deg, hsl(20, 100%, 50%), hsl(0, 100%, 50%));
-    color: hsl(0, 0%, 100%);
+.btn {
+    background: var(--accent-primary);
+    color: var(--text-color);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -78,155 +98,59 @@
     transition: background 0.3s ease;
 }
 
-.project-info .btn:hover {
-    background: linear-gradient(90deg, hsl(0, 100%, 50%), hsl(20, 100%, 50%));
+.btn:hover {
+    background: var(--accent-secondary);
 }
 
-/* SECTION 2: Skills Grid */
+/* Skills Grid */
 .skills-grid {
-    margin: 40px auto;
+    margin-top: 50px;
     text-align: center;
+    width: 100%;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-.skills-grid h2 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: hsl(0, 0%, 100%);
-}
-
-/* Skills Grid Container */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Individual Skill Card */
 .skill-card {
-    background: linear-gradient(90deg, hsl(20, 100%, 50%), hsl(0, 100%, 50%));
-    color: hsl(0, 0%, 100%);
-    font-size: 1.2rem;
+    background: var(--accent-primary);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
-    border-radius: 10px;
-    height: 200px;
+    transition: background 0.3s ease, transform 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .skill-card img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
 }
 
 .skill-card:hover {
-    background: linear-gradient(90deg, hsl(0, 100%, 50%), hsl(20, 100%, 50%));
+    background: var(--accent-secondary);
     transform: scale(1.05);
 }
 
-.skill-card .skill-text {
-    font-size: 1rem;
-    color: hsl(0, 0%, 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.skill-card:hover .skill-text {
-    opacity: 1;
-}
-
-/* Mobile Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .slider-container {
-        padding: 0 2vw;
-    }
-
-    .slider-track {
-        gap: 10px;
-    }
-
-    .project-card {
-        height: 50vh;
-        flex: 0 0 95vw;
-    }
-
-    .project-info h2 {
-        font-size: 1.5em;
-    }
-
-    .project-info p {
-        font-size: 0.9em;
-    }
-
-    .project-info .btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skill-card {
-        font-size: 1rem;
-        height: 150px;
-    }
-
-    .skill-card img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .skill-card .skill-text {
-        font-size: 0.9rem;
-    }
-}
-
-/* Smaller Devices */
-@media (max-width: 480px) {
-    .slider-container {
-        padding: 0 1vw;
-    }
-
-    .project-card {
-        height: 40vh;
-        flex: 0 0 100vw;
-    }
-
-    .project-info h2 {
-        font-size: 1.2em;
-    }
-
-    .project-info p {
-        font-size: 0.8em;
-    }
-
-    .project-info .btn {
-        font-size: 0.8em;
-        padding: 6px 12px;
-    }
-
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-card {
-        height: 120px;
-    }
-
-    .skill-card img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .skill-card .skill-text {
-        font-size: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 }
