@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Add hover effect to project cards
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
@@ -14,11 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Ensure project links open in a new tab
+    // Open project links in a new tab
     const projectLinks = document.querySelectorAll('.project-links a');
     projectLinks.forEach(link => {
         link.setAttribute('target', '_blank');
     });
-
-
 });
