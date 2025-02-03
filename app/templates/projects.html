@@ -6,12 +6,17 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
 {% endblock %}
 
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+{% endblock %}
+
 {% block content %}
 <main class="projects-page">
     <h1 class="section-title">Projects</h1>
-    
+
     <!-- Grid Layout for Projects -->
     <section class="projects-grid">
+        <!-- CineSteam Project Card -->
         <div class="project-card">
             <img src="{{ url_for('static', filename='images/CineSteamLogo.webp') }}" alt="CineSteamLogo">
             <div class="project-details">
@@ -21,15 +26,18 @@
                     <li>Python</li>
                     <li>PostgreSQL</li>
                     <li>pandas</li>
+                    <li>psycopg2</li>
                     <li>ETL</li>
                 </ul>
                 <div class="project-links">
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/kevinrhz/CineSteam" class="btn">GitHub</a>
-                    <a href="#" class="btn">Live Demo</a>
+                    <a href="{{ url_for('main.cinesteam_demo') }}" class="btn">Demo</a>
+
                 </div>
             </div>
         </div>
         
+        <!-- Custom Gaming PC Project Card -->
         <div class="project-card">
             <img src="{{ url_for('static', filename='images/close up.jpeg') }}" alt="Custom PC Build">
             <div class="project-details">
@@ -38,14 +46,15 @@
                 <ul class="tech-stack">
                     <li>Custom Cooling Loop</li>
                     <li>Hardware Tuning</li>
-                    <li>PC Troubleshooting</li>
+                    <li>Troubleshooting</li>
                 </ul>
                 <div class="project-links">
-                    <a href="#" class="btn">Images</a>
+                    <a href="#" class="btn open-viewer" data-project="customPC">Images</a>
                 </div>
             </div>
         </div>
         
+        <!-- PyFileManager Project Card -->
         <div class="project-card">
             <img src="{{ url_for('static', filename='images/PyFileManagerLogo.webp') }}" alt="Porsche 935">
             <div class="project-details">
@@ -99,5 +108,20 @@
             </div>
         </div>
     </section>
+
+        <!-- Modal Viewer -->
+        <div id="mediaViewer" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="media-container">
+                    <button id="prevBtn" class="nav-btn">&#10094;</button>
+                    <div id="mediaWrapper">
+                        <img id="viewerImage" class="viewer-media" src="" alt="Media">
+                        <video id="viewerVideo" class="viewer-media" controls></video>
+                    </div>
+                    <button id="nextBtn" class="nav-btn">&#10095;</button>
+                </div>
+            </div>
+        </div>
 </main>
 {% endblock %}

@@ -57,6 +57,6 @@ def projects():
     return render_template('projects.html')
 
 
-@main.route('/skills')
-def skills():
-    return render_template('skills.html')
+@main.route('/cinesteam-demo')
+def cinesteam_demo():
+    return render_template('cinesteam.html')
