@@ -14,11 +14,10 @@ def test_session():
     session['test_key'] = 'test_value'
     return f"Session set: {session.get('test_key')}"
 
-
+#home route
 @main.route('/')
 def home():
     return render_template('home.html')
-
 
 @main.route('/contact', methods=['GET', 'POST'])
 def contact():
