@@ -1,0 +1,33 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Copy files to Raspberry Pi
+      uses: appleboy/scp-action@v0.1.3
+      with:
+        host: ${{ secrets.PI_HOST }}
+        username: ${{ secrets.PI_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "."
+        target: "~/portfolio"
+
+    - name: Restart Flask app
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.PI_HOST }}
+        username: ${{ secrets.PI_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd ~/portfolio
+          source venv/bin/activate
+          sudo systemctl restart portfolio.service
