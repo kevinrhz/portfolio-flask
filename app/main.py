@@ -59,3 +59,7 @@ def projects():
 @main.route('/cinesteam-demo')
 def cinesteam_demo():
     return render_template('cinesteam.html')
+
+@main.route('/gallery')
+def gallery():
+    return render_template("gallery.html")

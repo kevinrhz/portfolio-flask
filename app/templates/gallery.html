@@ -1,0 +1,28 @@
+{# templates/gallery.html #}
+{% extends "base.html" %}
+
+{% block title %}PC Build Gallery{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="gallery-page">
+  <h1>My Custom PC Build</h1>
+  <div class="gallery-container">
+    <!-- Images -->
+    {% for i in range(1, 7) %}
+    <img src="{{ url_for('static', filename='images/pc_build/img' ~ i ~ '.webp') }}" alt="PC Build Image {{ i }}" class="gallery-image">
+    {% endfor %}
+
+    <!-- Videos -->
+    <video autoplay loop muted playsinline class="gallery-video">
+      <source src="{{ url_for('static', filename='videos/pc_build/video1.mp4') }}" type="video/mp4">
+    </video>
+    <video autoplay loop muted playsinline class="gallery-video">
+      <source src="{{ url_for('static', filename='videos/pc_build/video2.mp4') }}" type="video/mp4">
+    </video>
+  </div>
+</main>
+{% endblock %}

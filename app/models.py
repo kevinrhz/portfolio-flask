@@ -22,3 +22,11 @@ class Project(db.Model):
 
     def __repr__(self):
         return f'<Project {self.title}>'
+
+class GalleryItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    project = db.Column(db.String(50), nullable=False)
+    media_type = db.Column(db.String(10), nullable=False)  # 'image' or 'video'
+    filename = db.Column(db.String(255), nullable=False)
+    caption = db.Column(db.String(255))
+    order = db.Column(db.Integer, default=0)
