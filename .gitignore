@@ -1,0 +1,23 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+venv/
+.venv/
+*.egg-info/
+.Python
+.pytest_cache/
+
+# Database
+*.db
+*.sqlite3
+/instance/app.db
+
+# Flask specific
+.flaskenv
+
+# OS / IDE specific
+.DS_Store
+/.vscode/
+activate.bat
